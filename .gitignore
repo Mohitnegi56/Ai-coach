@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual Environment
+venv/
+myenv/
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# Model Cache
+model_weights/
+.cache/
+huggingface/
+
+# Audio
+data/audio/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
