@@ -4,18 +4,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        extra="ignore",
+    )
 
     app_name: str = "AI Interview Coach"
     api_prefix: str = "/api"
-    cors_origins: list[str] = [
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:3000",
-        "http://localhost:8501",
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:5174",
-    ]
+    cors_origins: list[str] = ["*"]
 
     whisper_model_size: str = "base"
     whisper_device: str = "cpu"
@@ -34,8 +30,12 @@ class Settings(BaseSettings):
     score_weight_interview_communication: float = 0.25
     score_weight_interview_presence: float = 0.25
 
-    database_path: Path = Path(__file__).resolve().parent.parent / "data" / "sessions.db"
-    tts_engine: str = "pyttsx3"
+    BASE_DIR = Path(__file__).resolve().parent
+
+    database_path: Path = BASE_DIR / "data" / "sessions.db"
+
+    questions_path: Path = BASE_DIR / "data" / "questions.json"
+    tts_engine = "gtts"
 
     filler_words: list[str] = [
         "um",
