@@ -1,5 +1,7 @@
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -30,12 +32,10 @@ class Settings(BaseSettings):
     score_weight_interview_communication: float = 0.25
     score_weight_interview_presence: float = 0.25
 
-    BASE_DIR = Path(__file__).resolve().parent
 
     database_path: Path = BASE_DIR / "data" / "sessions.db"
 
     questions_path: Path = BASE_DIR / "data" / "questions.json"
-    tts_engine = "gtts"
 
     filler_words: list[str] = [
         "um",
