@@ -4,7 +4,7 @@ from pathlib import Path
 import librosa
 import numpy as np
 
-from backend.models.schemas import VoiceConfidenceResult
+from models.schemas import VoiceConfidenceResult
 
 
 class VoiceConfidenceService:

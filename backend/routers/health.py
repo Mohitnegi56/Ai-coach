@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-from backend.config import settings
-from backend.models.schemas import EvaluationHealth, HealthResponse
-from backend.services.grammar_score_service import grammar_score_service
+from config import settings
+from models.schemas import EvaluationHealth, HealthResponse
+from services.grammar_score_service import grammar_score_service
 
 router = APIRouter(tags=["health"])
 

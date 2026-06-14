@@ -1,6 +1,6 @@
 import language_tool_python
 
-from backend.models.schemas import GrammarIssue, GrammarResult
+from models.schemas import GrammarIssue, GrammarResult
 
 MAX_ISSUES_RETURNED = 8
 PENALTY_PER_ERROR = 6

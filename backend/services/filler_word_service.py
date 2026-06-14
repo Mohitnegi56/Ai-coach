@@ -1,7 +1,7 @@
 import re
 
-from backend.config import settings
-from backend.models.schemas import FillerWordResult
+from config import settings
+from models.schemas import FillerWordResult
 
 
 class FillerWordService:

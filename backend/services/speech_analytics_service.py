@@ -1,10 +1,10 @@
 from pathlib import Path
 
-from backend.models.schemas import SpeechAnalyticsResponse
-from backend.services.audio_utils import write_audio_bytes
-from backend.services.communication_score_service import communication_score_service
-from backend.services.filler_word_service import filler_word_service
-from backend.services.voice_confidence_service import voice_confidence_service
+from models.schemas import SpeechAnalyticsResponse
+from services.audio_utils import write_audio_bytes
+from services.communication_score_service import communication_score_service
+from services.filler_word_service import filler_word_service
+from services.voice_confidence_service import voice_confidence_service
 
 
 class SpeechAnalyticsService:

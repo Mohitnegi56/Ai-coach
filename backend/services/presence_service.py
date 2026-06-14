@@ -4,7 +4,7 @@ from collections import Counter
 import numpy as np
 from PIL import Image
 
-from backend.models.schemas import EmotionSnapshot, EyeContactStats, PresenceAnalyticsResponse
+from models.schemas import EmotionSnapshot, EyeContactStats, PresenceAnalyticsResponse
 
 
 class PresenceService:

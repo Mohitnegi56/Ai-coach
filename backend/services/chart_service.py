@@ -1,7 +1,7 @@
 import base64
 import math
 
-from backend.models.schemas import ScoreRadar
+from models.schemas import ScoreRadar
 
 
 class ChartService:

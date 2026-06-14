@@ -3,7 +3,7 @@ import io
 import tempfile
 from pathlib import Path
 
-from backend.config import settings
+from config import settings
 
 
 class TTSService:

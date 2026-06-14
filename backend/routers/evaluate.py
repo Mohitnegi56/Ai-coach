@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-from backend.models.schemas import EvaluationRequest, EvaluationResponse
-from backend.services.evaluation_service import evaluation_service
+from models.schemas import EvaluationRequest, EvaluationResponse
+from services.evaluation_service import evaluation_service
 
 router = APIRouter(prefix="/evaluate", tags=["evaluate"])
 

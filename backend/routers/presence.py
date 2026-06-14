@@ -1,7 +1,7 @@
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 
-from backend.models.schemas import EyeContactStats, PresenceAnalyticsResponse
-from backend.services.presence_service import presence_service
+from models.schemas import EyeContactStats, PresenceAnalyticsResponse
+from services.presence_service import presence_service
 
 router = APIRouter(prefix="/analyze-presence", tags=["presence-analytics"])
 

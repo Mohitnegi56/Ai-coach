@@ -1,6 +1,6 @@
 import re
 
-from backend.models.schemas import CommunicationResult, FillerWordResult, VoiceConfidenceResult
+from models.schemas import CommunicationResult, FillerWordResult, VoiceConfidenceResult
 
 
 class CommunicationScoreService:

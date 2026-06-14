@@ -3,8 +3,8 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-from backend.config import settings
-from backend.models.schemas import SessionRecord, SessionSummary
+from config import settings
+from models.schemas import SessionRecord, SessionSummary
 
 
 class SessionService:

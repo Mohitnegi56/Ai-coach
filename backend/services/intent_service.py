@@ -3,8 +3,8 @@ import re
 
 from groq import Groq
 
-from backend.config import settings
-from backend.models.schemas import IntentResult
+from config import settings
+from models.schemas import IntentResult
 
 
 INTENT_PROMPT = """You are an ML/DS interview evaluator. Analyze the candidate's spoken answer.

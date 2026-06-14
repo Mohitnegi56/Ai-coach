@@ -1,9 +1,9 @@
-from backend.config import settings
-from backend.models.schemas import EvaluationResponse
-from backend.services.grammar_score_service import grammar_score_service
-from backend.services.intent_service import intent_service
-from backend.services.question_service import question_service
-from backend.services.technical_score_service import technical_score_service
+from config import settings
+from models.schemas import EvaluationResponse
+from services.grammar_score_service import grammar_score_service
+from services.intent_service import intent_service
+from services.question_service import question_service
+from services.technical_score_service import technical_score_service
 
 
 class EvaluationService:

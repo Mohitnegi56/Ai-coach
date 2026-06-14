@@ -1,8 +1,8 @@
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-from backend.config import settings
-from backend.models.schemas import TechnicalResult
+from config import settings
+from models.schemas import TechnicalResult
 
 
 class TechnicalScoreService:

@@ -3,8 +3,8 @@ from pathlib import Path
 
 from faster_whisper import WhisperModel
 
-from backend.config import settings
-from backend.models.schemas import TranscriptionResponse
+from config import settings
+from models.schemas import TranscriptionResponse
 
 
 class STTService:

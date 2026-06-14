@@ -2,8 +2,8 @@ import json
 import random
 from pathlib import Path
 
-from backend.config import settings
-from backend.models.schemas import PublicQuestion, Question, QuestionBank, QuestionBankMetadata
+from config import settings
+from models.schemas import PublicQuestion, Question, QuestionBank, QuestionBankMetadata
 
 
 class QuestionService:

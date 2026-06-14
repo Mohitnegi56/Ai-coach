@@ -1,10 +1,10 @@
 from fastapi import APIRouter, HTTPException
 
-from backend.models.schemas import FeedbackPackageResponse, FeedbackRequest
-from backend.services.chart_service import chart_service
-from backend.services.feedback_service import feedback_service
-from backend.services.session_service import session_service
-from backend.services.tts_service import tts_service
+from models.schemas import FeedbackPackageResponse, FeedbackRequest
+from services.chart_service import chart_service
+from services.feedback_service import feedback_service
+from services.session_service import session_service
+from services.tts_service import tts_service
 
 router = APIRouter(prefix="/feedback", tags=["feedback"])
 

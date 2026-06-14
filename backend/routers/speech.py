@@ -2,8 +2,8 @@ from pathlib import Path
 
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 
-from backend.models.schemas import SpeechAnalyticsResponse
-from backend.services.speech_analytics_service import speech_analytics_service
+from models.schemas import SpeechAnalyticsResponse
+from services.speech_analytics_service import speech_analytics_service
 
 router = APIRouter(prefix="/analyze-speech", tags=["speech-analytics"])
 

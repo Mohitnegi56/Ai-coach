@@ -2,8 +2,8 @@ import json
 
 from groq import Groq
 
-from backend.config import settings
-from backend.models.schemas import FeedbackResponse, ScoreRadar
+from config import settings
+from models.schemas import FeedbackResponse, ScoreRadar
 
 
 FEEDBACK_PROMPT = """You are an expert ML/DS interview coach. Generate structured feedback from the candidate's scores.

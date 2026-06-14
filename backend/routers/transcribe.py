@@ -2,8 +2,8 @@ from pathlib import Path
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
-from backend.models.schemas import TranscriptionResponse
-from backend.services.stt_service import stt_service
+from models.schemas import TranscriptionResponse
+from services.stt_service import stt_service
 
 router = APIRouter(prefix="/transcribe", tags=["transcribe"])
 
