@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.config import settings
-from backend.routers import evaluate, feedback, health, presence, questions, sessions, speech, transcribe
+from config import settings
+from routers import evaluate, feedback, health, presence, questions, sessions, speech, transcribe
 
 app = FastAPI(title=settings.app_name)
 
