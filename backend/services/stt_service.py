@@ -13,11 +13,26 @@ class STTService:
 
     def _get_model(self) -> WhisperModel:
         if self._model is None:
-            self._model = WhisperModel(
-                settings.whisper_model_size,
-                device=settings.whisper_device,
-                compute_type=settings.whisper_compute_type,
-            )
+            try:
+                self._model = WhisperModel(
+                    settings.whisper_model_size,
+                    device=settings.whisper_device,
+                    compute_type=settings.whisper_compute_type,
+                )
+            except Exception as exc:
+                if settings.whisper_device == "cuda":
+                    import logging
+                    logging.warning(
+                        f"CUDA Whisper model loading failed: {exc}. "
+                        "Falling back to CPU device with int8 compute type."
+                    )
+                    self._model = WhisperModel(
+                        settings.whisper_model_size,
+                        device="cpu",
+                        compute_type="int8",
+                    )
+                else:
+                    raise exc
         return self._model
 
     def transcribe_file(self, audio_path: Path) -> TranscriptionResponse:

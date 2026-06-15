@@ -8,7 +8,21 @@ import type {
   TranscriptionResponse,
 } from '../types'
 
-const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api'
+const API_BASE = (() => {
+  const envUrl = import.meta.env.VITE_API_URL
+  if (envUrl) return envUrl
+
+  if (
+    typeof window !== 'undefined' &&
+    window.location.hostname !== 'localhost' &&
+    window.location.hostname !== '127.0.0.1' &&
+    !window.location.hostname.startsWith('192.168.') &&
+    !window.location.hostname.startsWith('10.')
+  ) {
+    return 'https://ai-coach-backend-mr0m.onrender.com/api'
+  }
+  return 'http://localhost:8000/api'
+})()
 
 function parseErrorDetail(raw: string, status: number): string {
   if (!raw) return `Request failed (${status})`
