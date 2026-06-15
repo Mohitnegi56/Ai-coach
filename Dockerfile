@@ -20,12 +20,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application source code
 COPY backend/ ./backend/
 
-# Expose server port
-EXPOSE 8000
-
-# Setup path and port variables
+# Setup path
 ENV PYTHONPATH="/app/backend"
-ENV PORT=8000
 
-# Start FastAPI server
-CMD uvicorn main:app --host 0.0.0.0 --port 8000
+# Start FastAPI server, binding to the port assigned by Render
+CMD uvicorn main:app --host 0.0.0.0 --port $PORT
