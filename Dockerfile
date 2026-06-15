@@ -3,9 +3,8 @@ FROM python:3.11-slim
 
 # Install system dependencies (Java for LanguageTool, FFmpeg for audio, and GLib/OpenCV requisites)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    openjdk-17-jr-headless \
+    openjdk-17-jre-headless \
     ffmpeg \
-    libgl1-mesa-glx \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
