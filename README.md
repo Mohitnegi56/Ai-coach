@@ -1,5 +1,7 @@
 # AI Interview Coach
 
+🚀 **Live Demo:** [AI Interview Coach](https://ai-coach-gqwwv59m9-mohit-negis-projects-11ef8bac.vercel.app/)
+
 A full-stack, AI-powered simulator designed to help machine learning and data science candidates practice technical interviews with real-time feedback, speech analytics, and behavioral insights.
 
 ---
