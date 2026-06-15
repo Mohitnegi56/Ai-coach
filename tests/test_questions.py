@@ -4,11 +4,11 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.main import app
-from backend.services.question_service import QuestionService
+from main import app
+from services.question_service import QuestionService
 
 client = TestClient(app)
-QUESTIONS_PATH = Path(__file__).resolve().parent.parent / "data" / "questions.json"
+QUESTIONS_PATH = Path(__file__).resolve().parent.parent / "backend" / "data" / "questions.json"
 
 
 def test_question_bank_has_100_plus_questions():

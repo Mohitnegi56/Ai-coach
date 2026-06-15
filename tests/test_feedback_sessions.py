@@ -2,11 +2,11 @@ from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
-from backend.main import app
-from backend.models.schemas import FeedbackResponse, ScoreRadar
-from backend.services.chart_service import chart_service
-from backend.services.feedback_service import feedback_service
-from backend.services.session_service import SessionService
+from main import app
+from models.schemas import FeedbackResponse, ScoreRadar
+from services.chart_service import chart_service
+from services.feedback_service import feedback_service
+from services.session_service import SessionService
 
 client = TestClient(app)
 
@@ -31,7 +31,7 @@ def test_radar_chart_generates():
     assert len(encoded) > 100
 
 
-@patch("backend.services.feedback_service.feedback_service.generate")
+@patch("services.feedback_service.feedback_service.generate")
 def test_feedback_endpoint(mock_generate):
     mock_generate.return_value = FeedbackResponse(
         summary="Good job.",
@@ -67,7 +67,8 @@ def test_feedback_endpoint(mock_generate):
 
 def test_session_persistence(tmp_path):
     service = SessionService(db_path=tmp_path / "test.db")
-    from backend.models.schemas import SessionRecord
+    from models.schemas import SessionRecord
+
 
     feedback = feedback_service._fallback_feedback(
         "Q?", 80, 70, 65, 75, 74

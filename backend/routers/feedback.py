@@ -36,7 +36,7 @@ def generate_feedback(payload: FeedbackRequest) -> FeedbackPackageResponse:
 
         session_id = None
         if payload.save_session and payload.question_id:
-            from backend.models.schemas import SessionRecord
+            from models.schemas import SessionRecord
 
             record = session_service.save(
                 SessionRecord(

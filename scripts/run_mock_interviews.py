@@ -3,13 +3,17 @@
 from __future__ import annotations
 
 import json
+import sys
+from pathlib import Path
 from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "backend"))
 
 from fastapi.testclient import TestClient
 
-from backend.main import app
-from backend.models.schemas import IntentResult
-from backend.services.question_service import question_service
+from main import app
+from models.schemas import IntentResult
+from services.question_service import question_service
 
 client = TestClient(app)
 
@@ -88,7 +92,7 @@ MOCK_INTENT = IntentResult(
 def run_rounds() -> list[dict]:
     results: list[dict] = []
 
-    with patch("backend.services.evaluation_service.intent_service.extract_intent") as mock_intent:
+    with patch("services.evaluation_service.intent_service.extract_intent") as mock_intent:
         mock_intent.return_value = (MOCK_INTENT, "groq")
 
         for question_id, answer, label in MOCK_ANSWERS:
@@ -166,7 +170,7 @@ def main() -> None:
         if scores:
             print(f"  {band}: {sum(scores) / len(scores):.1f} ({len(scores)} rounds)")
 
-    output_path = "data/mock_interview_results.json"
+    output_path = "backend/data/mock_interview_results.json"
     with open(output_path, "w", encoding="utf-8") as handle:
         json.dump(results, handle, indent=2)
     print(f"\nSaved results to {output_path}")

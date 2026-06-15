@@ -1,0 +1,134 @@
+[
+  {
+    "question_id": "ml-001",
+    "label": "good",
+    "content": 84.14,
+    "technical": 76.76,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 79.57,
+    "session_id": 5
+  },
+  {
+    "question_id": "ml-002",
+    "label": "good",
+    "content": 90.18,
+    "technical": 90.17,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 82.59,
+    "session_id": 6
+  },
+  {
+    "question_id": "ml-003",
+    "label": "medium",
+    "content": 87.58,
+    "technical": 84.4,
+    "grammar": 100.0,
+    "communication": 62.0,
+    "presence": 58.0,
+    "interview_score": 73.78999999999999,
+    "session_id": 7
+  },
+  {
+    "question_id": "ml-004",
+    "label": "good",
+    "content": 69.15,
+    "technical": 43.45,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 72.075,
+    "session_id": 8
+  },
+  {
+    "question_id": "dl-001",
+    "label": "good",
+    "content": 86.93,
+    "technical": 82.95,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 80.965,
+    "session_id": 9
+  },
+  {
+    "question_id": "dl-002",
+    "label": "good",
+    "content": 87.45,
+    "technical": 84.11,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 81.225,
+    "session_id": 10
+  },
+  {
+    "question_id": "stat-001",
+    "label": "good",
+    "content": 57.09,
+    "technical": 16.64,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 66.045,
+    "session_id": 11
+  },
+  {
+    "question_id": "stat-002",
+    "label": "weak",
+    "content": 57.92,
+    "technical": 18.49,
+    "grammar": 100.0,
+    "communication": 48.0,
+    "presence": 45.0,
+    "interview_score": 52.21,
+    "session_id": 12
+  },
+  {
+    "question_id": "py-001",
+    "label": "good",
+    "content": 57.65,
+    "technical": 22.16,
+    "grammar": 92.31,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 66.325,
+    "session_id": 13
+  },
+  {
+    "question_id": "py-002",
+    "label": "good",
+    "content": 61.61,
+    "technical": 26.69,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 68.305,
+    "session_id": 14
+  },
+  {
+    "question_id": "nlp-001",
+    "label": "good",
+    "content": 90.76,
+    "technical": 95.18,
+    "grammar": 93.33,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 82.88,
+    "session_id": 15
+  },
+  {
+    "question_id": "sql-001",
+    "label": "good",
+    "content": 68.04,
+    "technical": 40.97,
+    "grammar": 100.0,
+    "communication": 78.0,
+    "presence": 72.0,
+    "interview_score": 71.52000000000001,
+    "session_id": 16
+  }
+]

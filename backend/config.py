@@ -24,6 +24,8 @@ class Settings(BaseSettings):
 
     embedding_model: str = "all-MiniLM-L6-v2"
 
+    tts_engine: str = "pyttsx3"
+
     score_weight_technical: float = 0.45
     score_weight_intent: float = 0.30
     score_weight_grammar: float = 0.25
@@ -49,8 +51,6 @@ class Settings(BaseSettings):
         "i mean",
         "so",
     ]
-
-    questions_path: Path = Path(__file__).resolve().parent.parent / "data" / "questions.json"
 
 
 settings = Settings()

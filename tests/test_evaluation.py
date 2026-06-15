@@ -3,11 +3,11 @@ from unittest.mock import patch
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.main import app
-from backend.models.schemas import GrammarResult, IntentResult, TechnicalResult
-from backend.services.grammar_score_service import grammar_score_service
-from backend.services.intent_service import intent_service
-from backend.services.technical_score_service import technical_score_service
+from main import app
+from models.schemas import GrammarResult, IntentResult, TechnicalResult
+from services.grammar_score_service import grammar_score_service
+from services.intent_service import intent_service
+from services.technical_score_service import technical_score_service
 
 client = TestClient(app)
 
@@ -42,7 +42,7 @@ def test_grammar_score_clean_text():
 
 
 def test_intent_fallback_without_groq():
-    with patch("backend.services.intent_service.settings.groq_api_key", ""):
+    with patch("services.intent_service.settings.groq_api_key", ""):
         result, source = intent_service.extract_intent(
             "What is supervised learning?",
             "Supervised learning uses labeled data to train predictive models.",
@@ -53,9 +53,10 @@ def test_intent_fallback_without_groq():
 
 
 @patch(
-    "backend.services.evaluation_service.intent_service.extract_intent",
+    "services.evaluation_service.intent_service.extract_intent",
     return_value=(MOCK_INTENT, "groq"),
 )
+
 def test_evaluate_endpoint(mock_intent):
     payload = {
         "question_id": "ml-001",

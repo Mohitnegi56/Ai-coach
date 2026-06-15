@@ -170,7 +170,7 @@ def build_bank() -> dict:
 
 
 def main() -> None:
-    output = Path(__file__).resolve().parent.parent / "data" / "questions.json"
+    output = Path(__file__).resolve().parent.parent / "backend" / "data" / "questions.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     bank = build_bank()
     with output.open("w", encoding="utf-8") as handle:

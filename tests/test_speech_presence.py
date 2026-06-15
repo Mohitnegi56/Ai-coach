@@ -5,11 +5,11 @@ import pytest
 from fastapi.testclient import TestClient
 from PIL import Image
 
-from backend.main import app
-from backend.models.schemas import EmotionSnapshot, EyeContactStats
-from backend.services.communication_score_service import communication_score_service
-from backend.services.filler_word_service import filler_word_service
-from backend.services.presence_service import presence_service
+from main import app
+from models.schemas import EmotionSnapshot, EyeContactStats
+from services.communication_score_service import communication_score_service
+from services.filler_word_service import filler_word_service
+from services.presence_service import presence_service
 
 client = TestClient(app)
 
@@ -37,9 +37,9 @@ def test_communication_score_structure():
     assert result.filler_score >= 80
 
 
-@patch("backend.services.speech_analytics_service.voice_confidence_service.analyze")
+@patch("services.speech_analytics_service.voice_confidence_service.analyze")
 def test_analyze_speech_endpoint(mock_voice):
-    from backend.models.schemas import VoiceConfidenceResult
+    from models.schemas import VoiceConfidenceResult
 
     mock_voice.return_value = VoiceConfidenceResult(
         score=82.0,
@@ -61,7 +61,7 @@ def test_analyze_speech_endpoint(mock_voice):
     assert data["communication"]["score"] >= 0
 
 
-@patch("backend.services.presence_service.PresenceService._analyze_emotions")
+@patch("services.presence_service.PresenceService._analyze_emotions")
 def test_analyze_presence_endpoint(mock_emotions):
     mock_emotions.return_value = [
         EmotionSnapshot(

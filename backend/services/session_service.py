@@ -97,7 +97,7 @@ class SessionService:
         if row is None:
             return None
 
-        from backend.models.schemas import FeedbackResponse
+        from models.schemas import FeedbackResponse
 
         payload = dict(row)
         feedback = FeedbackResponse.model_validate(json.loads(payload.pop("feedback_json")))
